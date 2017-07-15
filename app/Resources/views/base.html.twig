@@ -26,6 +26,8 @@
     <!--[if lte IE 9]>
     <link href="/assets/plugins/codrops-dialogFx/dialog.ie.css" rel="stylesheet" type="text/css" media="screen" />
     <![endif]-->
+
+    {% block stylesheets %}{% endblock %}
 </head>
 <body class="fixed-header ">
 <!-- BEGIN SIDEBPANEL-->
@@ -371,7 +373,7 @@
             <div class="pull-center hidden-md hidden-lg">
                 <div class="header-inner">
                     <div class="brand inline">
-                        <img src="/assets/img/logo.png" alt="logo" data-src="/assets/img/logo.png" data-src-retina="/assets/img/logo_2x.png" width="78" height="22">
+                        App Name
                     </div>
                 </div>
             </div>
@@ -390,7 +392,7 @@
         <div class=" pull-left sm-table hidden-xs hidden-sm">
             <div class="header-inner">
                 <div class="brand inline">
-                    <img src="/assets/img/logo.png" alt="logo" data-src="/assets/img/logo.png" data-src-retina="/assets/img/logo_2x.png" width="78" height="22">
+                    App Name
                 </div>
                 <!-- START NOTIFICATION LIST -->
                 <ul class="notification-list no-margin hidden-sm hidden-xs b-grey b-l b-r no-style p-l-30 p-r-20">
@@ -570,7 +572,7 @@
                             <li>
                                 <p>App Name</p>
                             </li>
-                            <li><a href="#" class="active">Results</a>
+                            <li><a href="#" class="active">{{ page_title }}</a>
                             </li>
                         </ul>
                         <!-- END BREADCRUMB -->
@@ -1888,5 +1890,7 @@
 <!-- BEGIN PAGE LEVEL JS -->
 <script src="/assets/js/scripts.js" type="text/javascript"></script>
 <!-- END PAGE LEVEL JS -->
+
+{% block javascripts %}{% endblock %}
 </body>
 </html>

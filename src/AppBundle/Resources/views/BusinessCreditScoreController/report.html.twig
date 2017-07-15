@@ -1,0 +1,61 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}AppBundle:BusinessCreditScoreController:report{% endblock %}
+
+{% block body %}
+
+    <div class="widget-9 panel no-border no-margin widget-loader-bar" style="background-color: {{ report.rating.color }}">
+        <div class="container-xs-height full-height" style="text-align: center">
+            {#<div class="row-xs-height">#}
+                {#<div class="col-xs-height col-top">#}
+                    {#<div class="panel-heading  top-left top-right">#}
+                        {#<div class="panel-title text-white">#}
+                            {#<span class="font-montserrat fs-11 all-caps">Business Credit Score</span>#}
+                        {#</div>#}
+                        {#<div class="panel-controls">#}
+                            {#<ul>#}
+                                {#<li><a href="#" class="portlet-refresh text-black" data-toggle="refresh"><i class="portlet-icon portlet-icon-refresh"></i></a>#}
+                                {#</li>#}
+                            {#</ul>#}
+                        {#</div>#}
+                    {#</div>#}
+                {#</div>#}
+            {#</div>#}
+            <div class="row-xs-height" style="color: white;">
+                <div class="col-xs-height col-top">
+                    <div class="p-l-20 p-t-15">
+                        <h1 class="no-margin p-b-5 text-white">{{ report.rating.description }}</h1>
+                        <span class="hint-text large">{{ report.rating.score }}% Chance of Being Granted a Loan</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row-xs-height">
+                <div class="col-xs-height col-bottom">
+                    <div class="progress progress-small m-b-20">
+
+                        <div class="progress-bar progress-bar-white" style="width:{{ report.rating.score }}%"></div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+    <h5 style="text-align: center;">Details</h5>
+
+    {% for recommendation in report.recommendations %}
+    <div class="panel panel-default">
+        <div class="panel-heading separator">
+            <div class="panel-title">
+                {{ recommendation.category }}
+            </div>
+        </div>
+        <div class="panel-body">
+            <h3>
+                <span class="semi-bold">{{ recommendation.lead }}</h3>
+            <p>{{ recommendation.details }}</p>
+        </div>
+    </div>
+    {% endfor %}
+{% endblock %}

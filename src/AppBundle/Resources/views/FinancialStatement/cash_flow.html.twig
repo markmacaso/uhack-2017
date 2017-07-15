@@ -1,0 +1,70 @@
+    <!-- START CONTAINER FLUID -->
+    <div class="container-fluid container-fixed-lg bg-white">
+        <!-- START PANEL -->
+        <div class="panel panel-transparent">
+          <div class="panel-heading">
+            <div class="panel-title">Cash Flow</div>
+            <div class="btn-group pull-right m-b-10">
+              <button type="button" class="btn btn-default">Add new</button>
+              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="#">Settings</a>
+                </li>
+                <li><a href="#">Help</a>
+                </li>
+              </ul>
+            </div>
+            <div class="clearfix"></div>
+          </div>
+          <div class="panel-body">
+            <div class="table-responsive">
+              <table class="table table-hover" id="basicTable">
+                <thead>
+                  <tr>
+                    <th style="width:1%">
+                      <button class="btn"><i class="pg-trash"></i>
+                      </button>
+                    </th>
+                    <th style="width:20%">Description</th>
+                    <th style="width:20%">Amount</th>
+                    <th style="width:29%">Source of fund</th>
+                    <th style="width:15%">Date</th>
+                    <th style="width:15%"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for cf in data %}
+                  <tr>
+                    <td class="v-align-middle">
+                      <div class="checkbox ">
+                        <input type="checkbox" value="3" id="checkbox{{ loop.index }}">
+                        <label for="checkbox{{ loop.index }}"></label>
+                      </div>
+                    </td>
+                    <td class="v-align-middle ">
+                      <p>{{ cf.details }}</p>
+                    </td>
+                    <td class="v-align-middle">
+                      <p>P {{ cf.amount }}</p>
+                    </td>
+                    <td class="v-align-middle">
+                      <p>{{ cf.typeOfSource }}</p>
+                    </td>
+                    <td class="v-align-middle">
+                      <p>{{ cf.dateEntered | date('M d, Y') }}</p>
+                    </td>
+                    <td class="v-align-middle">
+                      <p><a href="#"><i class="fa fa-files-o" aria-hidden="true"></i></a></p>
+                    </td>
+                  </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <!-- END PANEL -->
+      </div>
+      <!-- END CONTAINER FLUID -->
