@@ -3,6 +3,8 @@
 namespace AppBundle\Controller;
 
 use AppBundle\Data\CashFlowData;
+use AppBundle\Data\ExpensesData;
+use AppBundle\Data\SalesData;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
@@ -32,8 +34,36 @@ class FinancialStatementController extends Controller
         $data = $data->getData();
         // replace this example code with whatever you need
         return $this->render(
-            'AppBundle::FinancialStatement/cash_flow.html.twig',
-            ['page_title' => 'Cash Flow', 'data' => $data]
+            'AppBundle::FinancialStatement/financial_statement.html.twig',
+            ['page_title' => 'Cash Flow', 'data' => $data, 'tab_name' => 'cash_flow']
+        );
+    }
+
+    /**
+     * @Route("/expenses", name="fs-expenses")
+     */
+    public function expensesAction(Request $request)
+    {
+        $data = new ExpensesData();
+        $data = $data->getData();
+        // replace this example code with whatever you need
+        return $this->render(
+            'AppBundle::FinancialStatement/financial_statement.html.twig',
+            ['page_title' => 'Expenses', 'data' => $data, 'tab_name' => 'expenses']
+        );
+    }
+
+    /**
+     * @Route("/sales", name="fs-sales")
+     */
+    public function salesAction(Request $request)
+    {
+        $data = new SalesData();
+        $data = $data->getData();
+        // replace this example code with whatever you need
+        return $this->render(
+            'AppBundle::FinancialStatement/financial_statement.html.twig',
+            ['page_title' => 'Sales', 'data' => $data, 'tab_name' => 'sales']
         );
     }
 }

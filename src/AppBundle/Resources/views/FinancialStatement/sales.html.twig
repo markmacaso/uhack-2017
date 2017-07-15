@@ -1,9 +1,8 @@
-    <!-- START CONTAINER FLUID -->
     <div class="container-fluid container-fixed-lg bg-white">
         <!-- START PANEL -->
         <div class="panel panel-transparent">
           <div class="panel-heading">
-            <div class="panel-title">Cash Flow</div>
+            <div class="panel-title">Sales</div>
             <div class="btn-group pull-right m-b-10">
               <button type="button" class="btn btn-default">Add new</button>
               <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
@@ -29,13 +28,13 @@
                     </th>
                     <th style="width:20%">Description</th>
                     <th style="width:20%">Amount</th>
-                    <th style="width:29%">Source of fund</th>
+                    <th style="width:29%">Payment Mode</th>
                     <th style="width:15%">Date</th>
                     <th style="width:15%"></th>
                   </tr>
                 </thead>
                 <tbody>
-                  {% for cf in data %}
+                  {% for sale in data %}
                   <tr>
                     <td class="v-align-middle">
                       <div class="checkbox ">
@@ -44,16 +43,16 @@
                       </div>
                     </td>
                     <td class="v-align-middle ">
-                      <p>{{ cf.details }}</p>
+                      <p>{{ sale.details }}</p>
                     </td>
                     <td class="v-align-middle">
-                      <p>P {{ cf.amount }}</p>
+                      <p>P {{ sale.amount }}</p>
                     </td>
                     <td class="v-align-middle">
-                      <p>{{ cf.typeOfSource }}</p>
+                      <p>{{ sale.paymentMode }}</p>
                     </td>
                     <td class="v-align-middle">
-                      <p>{{ cf.dateEntered | date('M d, Y') }}</p>
+                      <p>{{ sale.dateOfSale | date('M d, Y') }}</p>
                     </td>
                     <td class="v-align-middle">
                       <p><a href="#"><i class="fa fa-files-o" aria-hidden="true"></i></a></p>

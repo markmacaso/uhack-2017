@@ -14,6 +14,12 @@ class CashFlowData
         $cf1->setDetails('Initial Investment');
         $cf1->setTypeOfSource('Loan');
 
-        return [$cf1];
+        $cf2 = new CashFlow();
+        $cf2->setAmount('50, 000');
+        $cf2->setDateEntered(new \DateTime('2016-04-03'));
+        $cf2->setDetails('Additional Investment');
+        $cf2->setTypeOfSource('Personal');
+
+        return [$cf1, $cf2];
     }
 }

@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <!-- START CONTAINER FLUID -->
+    <div class="panel">
+        <ul class="nav nav-tabs nav-tabs-simple" role="tablist" data-init-reponsive-tabs="collapse">
+            <li {{ tab_name == 'cash_flow' ? 'class="active"' : '' }}><a href="{{ path('fs-cash_flow') }}" data-toggle="tab" role="tab">Cash Flow</a>
+            </li>
+            <li {{ tab_name == 'sales' ? 'class="active"' : '' }}><a href="{{ path('fs-sales') }}" data-toggle="tab" role="tab">Sales</a>
+            </li>
+            <li {{ tab_name == 'expenses' ? 'class="active"' : '' }}><a href="{{ path('fs-expenses') }}" data-toggle="tab" role="tab">Expenses</a>
+            </li>
+            <li {{ tab_name == 'reports' ? 'class="active"' : '' }}><a href="{{ path('fs-cash_flow') }}" data-toggle="tab" role="tab">Reports</a>
+            </li>
+            <li {{ tab_name == 'imports' ? 'class="active"' : '' }}><a href="{{ path('fs-cash_flow') }}" data-toggle="tab" role="tab">Imports</a>
+            </li>
+        </ul>
+        <div class="tab-content">
+            {% include 'AppBundle::FinancialStatement/' ~ tab_name ~ '.html.twig' %}
+        </div>
+    </div>
+{% endblock %}
