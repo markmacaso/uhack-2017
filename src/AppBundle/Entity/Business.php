@@ -56,7 +56,19 @@ class Business
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
+    private $owners;
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
     private $documents;
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $customers;
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $supliers;
     /**
       * @ORM\Column(type="datetime", nullable=true)
       */
@@ -158,6 +170,18 @@ class Business
     public function setDocuments($documents)
     {
         $this->documents = $documents;
+
+        return $this;
+    }
+
+    public function getOwners()
+    {
+        return $this->owners;
+    }
+
+    public function setOwners($owners)
+    {
+        $this->owners = $owners;
 
         return $this;
     }

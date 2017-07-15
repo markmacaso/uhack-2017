@@ -66,4 +66,29 @@ class FinancialStatementController extends Controller
             ['page_title' => 'Sales', 'data' => $data, 'tab_name' => 'sales']
         );
     }
+
+    /**
+     * @Route("/reports", name="fs-reports")
+     */
+    public function reportsAction(Request $request)
+    {
+        // replace this example code with whatever you need
+        return $this->render(
+            'AppBundle::FinancialStatement/financial_statement.html.twig',
+            ['page_title' => 'Reports', 'tab_name' => 'reports']
+        );
+    }
+
+    /**
+     * @Route("/imports", name="fs-imports")
+     */
+    public function importsAction(Request $request)
+    {
+        // replace this example code with whatever you need
+        return $this->render(
+            'AppBundle::FinancialStatement/financial_statement.html.twig',
+            ['page_title' => 'Imports', 'tab_name' => 'imports']
+        );
+    }
+
 }
