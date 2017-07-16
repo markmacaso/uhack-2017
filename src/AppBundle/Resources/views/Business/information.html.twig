@@ -1,0 +1,75 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+      <!-- START CONTAINER FLUID -->
+      <div class="container-fluid container-fixed-lg">
+        <!-- START PANEL -->
+        <div class="panel panel-transparent">
+          <div class="panel-body">
+            <div class="row">
+              <div class="col-sm-10">
+                <h3>Business Information</h3>
+                <form id="form-work" class="form-horizontal" role="form" autocomplete="off">
+                  <div class="form-group">
+                    <label for="fname" class="col-sm-3 control-label">Business Name</label>
+                    <div class="col-sm-9">
+                        Awesome Business
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-sm-3 control-label">No Of Years</label>
+                    <div class="col-sm-9">
+                        5 years
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-sm-3 control-label">Industry</label>
+                    <div class="col-sm-9">
+                        Retail
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="position" class="col-sm-3 control-label">Address</label>
+                    <div class="col-sm-9">
+                        <p>#1 Colon St.</p>
+                        <p>Cebu City</p>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="name" class="col-sm-3 control-label">Owner(s)</label>
+                    <div class="col-sm-9">
+                        <p>Juan dela Cruz</p>
+                        <p>Maria Santos</p>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="name" class="col-sm-3 control-label">Documents</label>
+                    <div class="col-sm-9">
+                    <div class="checkbox ">
+                      <input type="checkbox" value="1" id="checkbox1">
+                      <label for="checkbox1">DTI Certificate</label>
+                    </div>
+                    <div class="checkbox">
+                      <input type="checkbox" checked="checked" value="1" id="checkbox2">
+                      <label for="checkbox2">SEC Documents</label>
+                    </div>
+                    <div class="checkbox">
+                      <input type="checkbox" value="1" id="checkbox3">
+                      <label for="checkbox3">Mayor's Business Permit</label>
+                    </div>
+                    <div class="checkbox">
+                      <input type="checkbox" checked="checked" value="1" id="checkbox4">
+                      <label for="checkbox4">Income Tax Return</label>
+                    </div>
+                    </div>
+                  </div>
+                  <br>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- END PANEL -->
+      </div>
+      <!-- END CONTAINER FLUID -->
+{% endblock %}

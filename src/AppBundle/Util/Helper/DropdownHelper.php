@@ -26,6 +26,7 @@ class DropdownHelper
             'cost_of_sales' => 'Cost of sales',
             'utility' => 'Utility Expenses',
             'capital_expense' => 'Capital Expense',
+            'loan_payment' => 'Loan Payment',
         ];
     }
 }
