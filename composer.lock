@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "620010b4a6c5f00f26dd7a5230eff84d",
+    "content-hash": "967ec92c912a0e2cdce14aa608e0e4cb",
     "packages": [
         {
             "name": "composer/ca-bundle",
@@ -886,6 +886,35 @@
                 "rest"
             ],
             "time": "2016-10-17T18:31:11+00:00"
+        },
+        {
+            "name": "gpetrache-at-ca/uhack_api",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/gpetrache-at-ca/uhack_api.git",
+                "reference": "3400fc064f5ffbacfcb3197ed4954694feb7e895"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/gpetrache-at-ca/uhack_api/zipball/3400fc064f5ffbacfcb3197ed4954694feb7e895",
+                "reference": "3400fc064f5ffbacfcb3197ed4954694feb7e895",
+                "shasum": ""
+            },
+            "type": "package",
+            "autoload": {
+                "psr-4": {
+                    "UnionBank\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "Giovanni Petrache",
+                    "email": "giovanni.petrache@codingavenue.com"
+                }
+            ],
+            "time": "2017-07-16 01:37:21"
         },
         {
             "name": "incenteev/composer-parameter-handler",
@@ -2251,16 +2280,16 @@
     "packages-dev": [
         {
             "name": "sensio/generator-bundle",
-            "version": "v3.1.4",
+            "version": "v3.1.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sensiolabs/SensioGeneratorBundle.git",
-                "reference": "37f9f4e165b033fb76cc2320838321cc57140e65"
+                "reference": "535417a99ac1b387df3bfbc0c060122c24665b78"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sensiolabs/SensioGeneratorBundle/zipball/37f9f4e165b033fb76cc2320838321cc57140e65",
-                "reference": "37f9f4e165b033fb76cc2320838321cc57140e65",
+                "url": "https://api.github.com/repos/sensiolabs/SensioGeneratorBundle/zipball/535417a99ac1b387df3bfbc0c060122c24665b78",
+                "reference": "535417a99ac1b387df3bfbc0c060122c24665b78",
                 "shasum": ""
             },
             "require": {
@@ -2301,7 +2330,7 @@
                 }
             ],
             "description": "This bundle generates code for you",
-            "time": "2017-03-15T01:02:10+00:00"
+            "time": "2017-07-12T17:28:00+00:00"
         },
         {
             "name": "symfony/phpunit-bridge",
@@ -2368,7 +2397,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "gpetrache-at-ca/uhack_api": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
