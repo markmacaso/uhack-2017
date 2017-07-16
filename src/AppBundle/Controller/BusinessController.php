@@ -8,7 +8,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
 /**
- * @Route("/business")
+ * @Route("/bus")
  */
 class BusinessController extends Controller
 {
@@ -19,7 +19,7 @@ class BusinessController extends Controller
     {
         // replace this example code with whatever you need
         return $this->render('AppBundle::Business/information.html.twig', [
-            'page_title' => 'Business Information'
+            'page_title' => 'Information'
         ]);
     }
 }
