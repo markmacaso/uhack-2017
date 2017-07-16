@@ -19,7 +19,17 @@ class BusinessCreditScoreControllerController extends Controller
         $report = $calculator->calculate();
         return $this->render('AppBundle:BusinessCreditScoreController:report.html.twig', array(
             'report' => $report,
-            'page_title' => 'Business Loan Evaluation'
+            'page_title' => 'Business Loan Assessment'
+        ));
+    }
+
+     /**
+     * @Route("businesscreditscore/generate", name="business-credit-score-generate")
+     */
+    public function generateAction()
+    {
+        return $this->render('AppBundle:BusinessCreditScoreController:generate.html.twig', array(
+            'page_title' => 'Business Loan Assessment'
         ));
     }
 }
