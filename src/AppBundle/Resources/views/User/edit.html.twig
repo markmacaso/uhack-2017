@@ -1,0 +1,21 @@
+{% extends "::base.html.twig" %}
+
+{% block body %}
+    <!-- START CONTAINER FLUID -->
+    <div class="container-fluid container-fixed-lg">
+        <!-- START PANEL -->
+        <div class="panel panel-transparent">
+            <div class="panel-body">
+                {{ form_start(user_form) }}
+
+                {{ form(user_form)  }}
+                {{ form(spouse_form)  }}
+                {{ form(occupation_form)  }}
+                {{ form(spouse_occupation_form)  }}
+
+
+                {{ form_end(user_form) }}
+            </div>
+        </div>
+    </div>
+{% endblock %}
