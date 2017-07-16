@@ -10,7 +10,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 class BusinessCreditScoreControllerController extends Controller
 {
     /**
-     * @Route("businesscreditscore/report")
+     * @Route("businesscreditscore/report", name="business-credit-score")
      */
     public function reportAction()
     {
