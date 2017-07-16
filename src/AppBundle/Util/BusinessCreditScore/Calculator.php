@@ -18,6 +18,10 @@ class Calculator {
     {
         // algorithm classified, you do not have the correct permission to view the algorithm
         $score = rand(0, 100);
-        return new Report(new Rating($score), Recommendation::factory());
+//        $score = 90;
+        $rating = new Rating($score);
+        $loan = $score >= 80 ? Loan::factory() : null;
+
+        return new Report($rating, Recommendation::factory($rating), $loan);
     }
 }

@@ -12,12 +12,14 @@ class Report {
      * @var array
      */
     private $recommendations;
+    private $loan;
 
-    public function __construct(Rating $rating, array $recommendations)
+    public function __construct(Rating $rating, array $recommendations, $loan)
     {
 
         $this->rating = $rating;
         $this->recommendations = $recommendations;
+        $this->loan = $loan;
     }
 
     public function getRating()
@@ -28,5 +30,10 @@ class Report {
     public function getRecommendations()
     {
         return $this->recommendations;
+    }
+
+    public function getLoan()
+    {
+        return $this->loan;
     }
 }

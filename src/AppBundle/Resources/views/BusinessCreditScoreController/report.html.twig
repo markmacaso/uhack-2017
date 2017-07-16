@@ -41,8 +41,82 @@
         </div>
     </div>
 
-    <hr>
+    {% if report.loan %}
+        <hr>
+        <div class="row">
+            <div class="col-md-5 col-md-offset-1">
+                <div class="panel no-border no-margin widget-loader-bar">
+                    <div class="container-xs-height full-height">
+                        <div class="row-xs-height">
+                            <div class="col-xs-height col-top">
+                                <div class="panel-heading  top-left top-right">
+                                    <div class="panel-title text-black">
+                                        <span class="font-montserrat fs-11 all-caps">Maximum Loanable Amount</span>
+                                    </div>
+                                    <div class="panel-controls">
+                                        <ul>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row-xs-height">
+                            <div class="col-xs-height col-top">
+                                <div class="p-l-20 p-t-60 p-b-40 p-r-20">
+                                    <h1 class="no-margin p-b-5">P {{ report.loan.maxLoanableAmount }}</h1>
+                                    <span class="hint-text">Based on your financial data, this is the maximum amount you can borrow.</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row-xs-height">
+                            <div class="col-xs-height col-bottom">
+                                <div class="progress progress-small m-b-0">
+                                    <div class="progress-bar progress-bar-success" style="width:100%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-5">
+                <div class="panel no-border no-margin widget-loader-bar">
+                    <div class="container-xs-height full-height">
+                        <div class="row-xs-height">
+                            <div class="col-xs-height col-top">
+                                <div class="panel-heading  top-left top-right">
+                                    <div class="panel-title text-black">
+                                        <span class="font-montserrat fs-11 all-caps">Loan Term</span>
+                                    </div>
+                                    <div class="panel-controls">
+                                        <ul>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row-xs-height">
+                            <div class="col-xs-height col-top">
+                                <div class="p-l-20 p-t-60 p-b-40 p-r-20">
+                                    <h1 class="no-margin p-b-5">{{ report.loan.loanTerm }} years</h1>
+                                    <span class="hint-text">This is the maximum number of years for your loan.</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row-xs-height">
+                            <div class="col-xs-height col-bottom">
+                                <div class="progress progress-small m-b-0">
+                                    <div class="progress-bar progress-bar-success" style="width:100%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+
     <h5 style="text-align: center;">Details</h5>
+    <hr>
 
     {% for recommendation in report.recommendations %}
     <div class="panel panel-default">
@@ -58,4 +132,9 @@
         </div>
     </div>
     {% endfor %}
+
+
+
+
+
 {% endblock %}

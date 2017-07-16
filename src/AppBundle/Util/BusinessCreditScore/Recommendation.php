@@ -30,7 +30,7 @@ class Recommendation {
         return $this->details;
     }
 
-    public static function factory()
+    public static function factory(Rating $rating)
     {
         $recs = [];
 
@@ -85,10 +85,16 @@ class Recommendation {
             ''
 
         );
-        $business['credit_ratio'] = new self(
+        $business['credit_ratio_below_50'] = new self(
             'Business',
             'Debt To Income Ratio is High',
             'Based on your audited financial statements, your debt to income ration is more than 50%. This is your monthly financial liabilities (except mortgage) divided by your total monthly income. This reduces your chances of getting approved for loans with favorable terms.'
+
+        );
+        $business['credit_ratio_near_50'] = new self(
+            'Business',
+            'Debt To Income Ratio is Moderate',
+            'Based on your audited financial statements, your debt to income ration is near 50%. This is your monthly financial liabilities (except mortgage) divided by your total monthly income. The higher the percentage, the lesser chance of getting approved for loans with favorable terms.'
 
         );
         $recs['Business'] = $business;
@@ -114,6 +120,33 @@ class Recommendation {
             'You need to have documents related to the collateral.'
         );
         $recs['Collateral'] = $collateral;
+
+        if ($rating->getScore() >= 90) {
+            return [new self('Business', 'Excellent Debt to Income Ratio', 'Your debt to income ratio is at minimum. This means that you are a good borrower and mostly likely be approved by the bank.')];
+        } elseif ($rating->getScore() >= 80) {
+            return [new self('Collateral', 'Sufficient Collateral Value', 'The propertie(s) you listed as collateral are not depreciating and in good value.')];
+        } elseif ($rating->getScore() >= 50) {
+            return [$recs['Collateral']['documents'], $recs['Business']['credit_ratio_near_50']];
+        } elseif ($rating->getScore() >= 20) {
+            // return all
+            $recommendations = [];
+            foreach ($recs as $cat => $cat_recs) {
+                foreach ($cat_recs as $cat_rec) {
+                    $recommendations[] = $cat_rec;
+                }
+            }
+            return $recommendations;
+        } else {
+            // return all
+            $recommendations = [];
+            foreach ($recs as $cat => $cat_recs) {
+                foreach ($cat_recs as $cat_rec) {
+                    $recommendations[] = $cat_rec;
+                }
+            }
+            return $recommendations;
+        }
+
 
         $recommendations = [];
         foreach ($recs as $cat => $cat_recs) {
