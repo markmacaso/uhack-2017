@@ -1,0 +1,34 @@
+{% extends "::base.html.twig" %}
+
+{% block body %}
+    <div class="panel panel-default" id="portlet-circular-minimal">
+        <div class="panel-heading" style="text-align: center;">
+            <div class="panel-title">LOAN ASSESSMENT
+            </div>
+        </div>
+        <div class="panel-body" style="text-align: center;">
+            <h1>
+                Using the information I provided, can I make a loan?
+            </h1>
+            <div id="leonel" data-color="complete" class=""></div>
+            <div id="tomes" style="text-align: center;">
+                <a href="#" class="btn btn-lg btn-rounded btn-complete m-r-20 m-b-10">Generate Report</a>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block javascripts %}
+    <script>
+        $('#tomes').click(function() {
+            $('#tomes').toggle();
+            $('#leonel').addClass('progress-circle-indeterminate');
+            window.setTimeout(function(){
+                // Move to a new location or you can do something else
+                window.location.href = "/businesscreditscore/report";
+            }, 1000);
+        });
+    </script>
+
+{% endblock %}
